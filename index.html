@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フォグランプ アンケート｜スーパー耐久24時間</title>
+<style>
+  :root {
+    --accent: #d6202a;
+    --accent-dark: #a8161e;
+    --bg: #0e1116;
+    --card: #ffffff;
+    --ink: #1a1d23;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .wrap { max-width: 600px; margin: 0 auto; padding: 0 16px 64px; }
+  header {
+    text-align: center;
+    color: #fff;
+    padding: 36px 16px 28px;
+  }
+  header .badge {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: .15em;
+    color: #fff;
+    background: var(--accent);
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  header h1 { font-size: 22px; margin: 0 0 10px; line-height: 1.4; }
+  header p { font-size: 14px; color: #b8c0cc; margin: 0; }
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.25);
+  }
+  .qnum {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+  .qtitle { font-size: 16px; font-weight: 700; margin: 0 0 16px; }
+  label.opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 13px 14px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    transition: .15s;
+    font-size: 15px;
+  }
+  label.opt:hover { border-color: #c9ccd1; }
+  label.opt input { accent-color: var(--accent); width: 19px; height: 19px; flex: none; }
+  label.opt:has(input:checked) {
+    border-color: var(--accent);
+    background: #fff5f5;
+    font-weight: 600;
+  }
+  .comment { margin-top: 14px; }
+  .comment span { font-size: 13px; color: var(--muted); display: block; margin-bottom: 6px; }
+  textarea {
+    width: 100%;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 11px 12px;
+    font-size: 15px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 62px;
+  }
+  textarea:focus, input[type=text]:focus { outline: none; border-color: var(--accent); }
+  input[type=text] {
+    width: 100%;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+    font-family: inherit;
+  }
+  .submit {
+    width: 100%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    padding: 17px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: .15s;
+  }
+  .submit:hover { background: var(--accent-dark); }
+  .submit:active { transform: scale(.99); }
+  .intro { color: #cfd6df; font-size: 14px; text-align: center; margin: 0 4px 22px; }
+  .thanks {
+    display: none;
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px;
+  }
+  .thanks h2 { font-size: 24px; }
+  .thanks .check {
+    font-size: 56px;
+    line-height: 1;
+  }
+  footer { text-align: center; color: #6b7280; font-size: 12px; padding: 8px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="badge">SUPER TAIKYU 24H</span>
+    <h1>フォグランプ アンケート</h1>
+    <p>ドライバーの皆さまへ</p>
+  </header>
+
+  <div id="formArea">
+    <p class="intro">
+      24時間レース、お疲れさまでした。<br>
+      今回提供したフォグランプについて、今後の商品改善やPRに活かしたいため、<br>
+      簡単に感想を教えてください（1〜2分で完了します）。
+    </p>
+
+    <form id="surveyForm" action="REPLACE_WITH_FORMSPREE_ENDPOINT" method="POST">
+
+      <div class="card">
+        <p class="qtitle"><span class="qnum">1</span>夜間走行時、明るさはどう感じましたか？</p>
+        <label class="opt"><input type="radio" name="Q1_明るさ" value="とても明るかった" required> とても明るかった</label>
+        <label class="opt"><input type="radio" name="Q1_明るさ" value="十分明るかった"> 十分明るかった</label>
+        <label class="opt"><input type="radio" name="Q1_明るさ" value="普通"> 普通</label>
+        <label class="opt"><input type="radio" name="Q1_明るさ" value="もう少し明るさがほしい"> もう少し明るさがほしい</label>
+        <div class="comment">
+          <span>コメント（任意）</span>
+          <textarea name="Q1_コメント" placeholder="自由にご記入ください"></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="qtitle"><span class="qnum">2</span>路面の見やすさはどうでしたか？</p>
+        <label class="opt"><input type="radio" name="Q2_見やすさ" value="とても見やすかった" required> とても見やすかった</label>
+        <label class="opt"><input type="radio" name="Q2_見やすさ" value="見やすかった"> 見やすかった</label>
+        <label class="opt"><input type="radio" name="Q2_見やすさ" value="普通"> 普通</label>
+        <label class="opt"><input type="radio" name="Q2_見やすさ" value="見にくい場面があった"> 見にくい場面があった</label>
+        <div class="comment">
+          <span>コメント（任意）</span>
+          <textarea name="Q2_コメント" placeholder="自由にご記入ください"></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="qtitle"><span class="qnum">3</span>雨・霧・暗い区間などで役立ったと感じましたか？</p>
+        <label class="opt"><input type="radio" name="Q3_有効性" value="かなり役立った" required> かなり役立った</label>
+        <label class="opt"><input type="radio" name="Q3_有効性" value="役立った"> 役立った</label>
+        <label class="opt"><input type="radio" name="Q3_有効性" value="あまり分からなかった"> あまり分からなかった</label>
+        <label class="opt"><input type="radio" name="Q3_有効性" value="改善が必要"> 改善が必要</label>
+        <div class="comment">
+          <span>コメント（任意）</span>
+          <textarea name="Q3_コメント" placeholder="自由にご記入ください"></textarea>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="qtitle">お名前 / ゼッケン（任意）</p>
+        <input type="text" name="お名前" placeholder="例：山田 / #55">
+      </div>
+
+      <button type="submit" class="submit">回答を送信する</button>
+    </form>
+  </div>
+
+  <div class="thanks" id="thanks">
+    <div class="check">✅</div>
+    <h2>ありがとうございました！</h2>
+    <p>ご回答を受け付けました。<br>今後の商品改善に活かしてまいります。</p>
+  </div>
+
+  <footer>© SUPER TAIKYU 24H Fog Lamp Survey</footer>
+</div>
+
+<script>
+  const form = document.getElementById('surveyForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.submit');
+    btn.textContent = '送信中…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('formArea').style.display = 'none';
+        document.getElementById('thanks').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('送信に失敗しました');
+      }
+    } catch (err) {
+      btn.textContent = '回答を送信する';
+      btn.disabled = false;
+      alert('送信に失敗しました。通信環境をご確認のうえ、もう一度お試しください。');
+    }
+  });
+</script>
+</body>
+</html>
